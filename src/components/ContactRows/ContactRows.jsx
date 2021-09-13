@@ -67,6 +67,7 @@ const ContactRows = ( props ) => {
             return location
         })
     }
+
     return (
         <div>
             {contacts.map((contact) => {
@@ -75,12 +76,10 @@ const ContactRows = ( props ) => {
                 const name = `${firstName} ${lastName}`
                 const initials = `${firstName[0]}${lastName[0]}`
                 console.log('NAME', name)
-
                 const contactTagsStr = getContactTags(contactTags)
-
                 const numberOfDeals = deals.length
                 const dealsTotalValue = getDealsTotalValue(deals)
-                
+
                 let geoAddressStr = ""
                 if(geoIps.length === 0){
                     geoAddressStr = 'N/A'
@@ -101,7 +100,6 @@ const ContactRows = ( props ) => {
                   />
                 )
             })}
-           
         </div>
     )
 }
