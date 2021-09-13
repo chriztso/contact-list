@@ -1,0 +1,41 @@
+.contact-categories{
+    /* border: 1px solid rgb(242, 243, 247);  */
+    border: 1px solid rgb(233, 234, 240);
+    display: flex; 
+    padding: 5px 0px;     
+    align-items: center;
+    color: rgb(96, 102, 124);
+    font-weight: 600;
+}
+
+.contact-categories__checkbox{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.contact-categories__contact-title{
+    /* border: 1px solid white; */
+    width: 20%; 
+}
+
+.contact-categories__value-title{
+    /* border: 1px solid white; */
+    width: 12%; 
+    display: flex;
+    align-items: center;
+}
+
+.contact-categories__location-title{
+    /* border: 1px solid white; */
+    width: 15%; 
+}
+
+.contact-categories__deals-title{
+    /* border: 1px solid white; */
+    width: 10%; 
+}
+
+.contact-categories__tags-title{
+    /* border: 1px solid black; */
+    width: 35%; 
+}

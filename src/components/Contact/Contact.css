@@ -1,0 +1,81 @@
+.contact{
+    display: flex;
+    border: 1px solid rgb(233, 234, 240);
+    padding: 5px 0px; 
+    align-items: center;
+}
+
+.contact:hover{
+    background-color: rgb(250,251,255);
+}
+
+.contact__checkbox{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.contact__name{
+    display: flex;
+    /* border: 1px solid white; */
+    width: 20%; 
+    align-items: center;
+    color: #356ae6;
+    font-weight: bold;
+}
+
+.contact__initials{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(232,224,252);
+    color: black;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    justify-content: center;
+    font-size: 12px;
+} 
+
+
+.contact__value{
+    /* border: 1px solid white; */
+    width: 12%; 
+}
+
+.contact__location{
+    /* border: 1px solid white; */
+    width: 15%; 
+}
+
+.contact__deals{
+    /* border: 1px solid white; */
+    width: 10%; 
+}
+
+.contact__tags{
+    /* border: 1px solid white; */
+    width: 30%; 
+}
+
+.contact__email-button{
+    display: flex;
+    border: 1px solid rgb(207, 211, 223);
+    border-radius: 5px;
+    align-items: center;
+    height: 40px;
+}
+
+
+.contact__email{
+    border-right: 1px solid rgb(207, 211, 223);
+    display: flex; 
+    align-items: center;
+    height: 100%;
+    padding: 0px 10px;
+    font-weight: 500;
+}
+
+.contact__down-arrow{
+    display: flex; 
+}
