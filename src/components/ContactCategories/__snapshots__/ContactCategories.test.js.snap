@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactCategories renders ContactCategories 1`] = `
+<div
+  className="contact-categories"
+>
+  <input
+    className="contact-categories__checkbox"
+    type="checkbox"
+  />
+  <span
+    className="contact-categories__contact-title"
+  >
+    Contact
+  </span>
+  <span
+    className="contact-categories__value-title"
+  >
+    Total Value
+    <Memo(ForwardRef(ArrowDropDownIcon)) />
+  </span>
+  <span
+    className="contact-categories__location-title"
+  >
+    Location
+  </span>
+  <span
+    className="contact-categories__deals-title"
+  >
+    Deals
+  </span>
+  <span
+    className="contact-categories__tags-title"
+  >
+    Tags
+  </span>
+  <Memo(ForwardRef(MoreHorizIcon)) />
+</div>
+`;
