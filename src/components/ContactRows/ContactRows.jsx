@@ -1,5 +1,6 @@
 import Contact from '../Contact/Contact'
 import { getStateAbbreviation } from '../../utils/format'   
+import convertToUSD from '../../utils/convert'
 
 const ContactRows = ( props ) => {
     const {
@@ -34,19 +35,26 @@ const ContactRows = ( props ) => {
     }
 
     const getDealsTotalValue = (deals) => {
-        let dealsTotalValue = 0
+        let dealsTotalValueUSD = 0
         //go through each deal ID in contact property array
         deals.forEach(dealID => {
             //access the deal object in dealObjects with each deal ID
             const dealObj = dealObjects[dealID]
-            //get value of deal object and add to dealsTotalValue
-            const { value } = dealObj
-            dealsTotalValue += Number(value)
+            //get value and currency of deal object and add to dealsTotalValue
+            const { value, currency } = dealObj
+            //convert to USD if currency is not USD
+            if(currency !== "usd"){
+              const valueInUSD = convertToUSD(currency, Number(value))
+              dealsTotalValueUSD += valueInUSD
+            } else {
+              //add without conversion if in USD
+              dealsTotalValueUSD += Number(value)
+            }
         })
-        console.log("TOTAL VAL", dealsTotalValue)
+        console.log("TOTAL VAL", dealsTotalValueUSD)
         //format number with commas
-        dealsTotalValue = dealsTotalValue.toLocaleString("en-US")
-        return dealsTotalValue
+        dealsTotalValueUSD = dealsTotalValueUSD.toLocaleString("en-US")
+        return dealsTotalValueUSD
     }
 
     const getLocation = (geoIps) => {
