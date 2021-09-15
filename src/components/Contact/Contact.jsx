@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 import './Contact.css'
@@ -13,8 +13,13 @@ const Contact = (props) => {
         geoAddressStr
     } = props
 
+    const [showButton, setShowButton] = useState(false)
+
     return (
-        <div className="contact">
+        <div className="contact" 
+          onMouseEnter={() => {setShowButton(true)}}
+          onMouseLeave={() => {setShowButton(false)}}
+        >
             <input type="checkbox" className="contact__checkbox"></input>
             <div className="contact__name">
                 <div className="contact__initials">
@@ -26,10 +31,10 @@ const Contact = (props) => {
             <span className="contact__location">{geoAddressStr}</span>
             <span className="contact__deals">{numberOfDeals}</span>
             <span className="contact__tags">{contactTagsStr}</span>
-            <div className="contact__email-button">
+            {showButton && <div className="contact__email-button">
               <div className="contact__email">Email</div>
               <div className="contact__down-arrow"><ArrowDropDownIcon/></div>
-            </div>
+            </div>}
         </div>
     )
 }
