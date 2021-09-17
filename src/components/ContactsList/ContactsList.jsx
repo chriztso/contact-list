@@ -1,15 +1,15 @@
-import './ContactsList.css'
 import ContactCategories from '../ContactCategories/ContactCategories'
 import ContactRows from '../ContactRows/ContactRows'
+import './ContactsList.css'
 
 const ContactsList = (props) => {
     const {
         contacts,
-        dealObjects,
-        tagObjects,
-        contactTagObjects,
-        geoIpsObjects,
-        geoAddressObjects
+        dealsObject,
+        tagsObject,
+        contactTagsObject,
+        geoIpsObject,
+        geoAddressesObject
     } = props
 
     return (
@@ -17,11 +17,11 @@ const ContactsList = (props) => {
             <ContactCategories />
             <ContactRows
                 contacts={contacts}
-                dealObjects={dealObjects}
-                tagObjects={tagObjects}
-                contactTagObjects={contactTagObjects}
-                geoIpsObjects={geoIpsObjects}
-                geoAddressObjects={geoAddressObjects}
+                dealsObject={dealsObject}
+                tagsObject={tagsObject}
+                contactTagsObject={contactTagsObject}
+                geoIpsObject={geoIpsObject}
+                geoAddressesObject={geoAddressesObject}
             />
         </div>
     )
