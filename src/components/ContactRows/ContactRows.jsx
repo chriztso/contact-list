@@ -79,16 +79,10 @@ const ContactRows = ( props ) => {
                 const { firstName, lastName, geoIps, contactTags, deals } = contact
                 const name = `${firstName} ${lastName}`
                 const initials = `${firstName[0]}${lastName[0]}`
-                const contactTagsStr = getContactTags(contactTags)
+                const contactTagsStr = contactTags.length === 0 ? '': getContactTags(contactTags)
                 const numberOfDeals = deals.length
-                const dealsTotalValue = getDealsTotalValue(deals)
-
-                let geoAddressStr = ""
-                if(geoIps.length === 0){
-                    geoAddressStr = 'N/A'
-                } else {
-                  geoAddressStr = getLocation(geoIps)
-                }
+                const dealsTotalValue = deals.length === 0 ? 0 : getDealsTotalValue(deals)
+                const geoAddressStr = geoIps.length === 0 ? 'N/A' : getLocation(geoIps)
 
                 return (
                   <Contact 
