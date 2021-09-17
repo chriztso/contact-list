@@ -14,7 +14,7 @@ const ContactCategories = () => {
             <span className="contact-categories__location-title">Location</span>
             <span className="contact-categories__deals-title">Deals</span>
             <span className="contact-categories__tags-title">Tags</span>
-            <MoreHorizIcon />
+            <span className="contact-categories__three-dots"><MoreHorizIcon /></span>
         </div>
     )
 }
