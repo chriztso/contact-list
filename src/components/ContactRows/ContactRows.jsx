@@ -16,7 +16,7 @@ const ContactRows = ( props ) => {
         let contactTagsArr = []
         //go through each contactTag ID in contact property array, 
         contactTags.forEach(contactTagID => {
-            //access the object in contactTagObjects with contact tag ID
+            //access the object in contactTagsObject with contact tag ID
             const contactTagObject = contactTagsObject[contactTagID]
             //get tag ID from contactTag object 
             const tagId = contactTagObject["tag"]
@@ -36,7 +36,7 @@ const ContactRows = ( props ) => {
         let dealsTotalValueUSD = 0
         //go through each deal ID in contact property array
         deals.forEach(dealID => {
-            //access the deal object in dealObjects with each deal ID
+            //access the deal object in dealsObject with each deal ID
             const dealObj = dealsObject[dealID]
             //get value and currency of deal object and add to dealsTotalValue
             const { value, currency } = dealObj
@@ -58,11 +58,11 @@ const ContactRows = ( props ) => {
         let location = ''
         //go through each geoIps ID 
         geoIps.forEach(geoIpsID => {
-            //access geoIps object in geoIpsObjects with each geoIps ID
+            //access geoIps object in geoIpsObject with each geoIps ID
             const geoIpsObj = geoIpsObject[geoIpsID]
             //accesss the geoAddrID property in each object
             const geoAddrID = geoIpsObj["geoaddrid"]
-            //access geoAddr object in geoAddressObjects with geoAddr ID
+            //access geoAddr object in geoAddressesObject with geoAddr ID
             const geoAddressObject = geoAddressesObject[geoAddrID]
             //get city, state, country
             const country = geoAddressObject["country2"]
