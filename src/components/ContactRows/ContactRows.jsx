@@ -11,7 +11,7 @@ const ContactRows = ( props ) => {
         geoIpsObject,
         geoAddressesObject
     } = props
-
+    console.log("CONTACTS", contacts)
     const getContactTags = (contactTags) => {
         let contactTagsArr = []
         //go through each contactTag ID in contact property array, 
@@ -76,7 +76,7 @@ const ContactRows = ( props ) => {
     return (
         <div className="contact-rows">
             {contacts.map((contact) => {
-                const { firstName, lastName, geoIps, contactTags, deals } = contact
+                const { id, firstName, lastName, geoIps, contactTags, deals } = contact
                 const name = `${firstName} ${lastName}`
                 const initials = `${firstName[0]}${lastName[0]}`
                 const contactTagsStr = contactTags.length === 0 ? '': getContactTags(contactTags)
@@ -86,6 +86,7 @@ const ContactRows = ( props ) => {
 
                 return (
                   <Contact 
+                      key={id}
                       name={name}
                       initials={initials}
                       contactTagsStr={contactTagsStr}
