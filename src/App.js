@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
-import './App.css';
 import ContactsList from './components/ContactsList/ContactsList'
 import { formatObjectByIDKeys } from './utils/format'
+import './App.css';
 
 const App = () => {
-  const [geoAddresses, setGeoAddresses] = useState([])
-  const [geoIps, setGeoIps] = useState([])
-  const [contactTags, setContactTags] = useState([])
-  const [deals, setDeals] = useState([])
-  const [tags, setTags] = useState([])
+  const [tagsObject, setTagsObject] = useState({})
+  const [contactTagsObject, setContactTagsObject] = useState({})
+  const [dealsObject, setDealsObject] = useState({})
+  const [geoAddressesObject, setGeoAddressesObject] = useState({})
+  const [geoIpsObject, setGeoIpsObject] = useState({})
   const [contacts, setContacts] = useState([])
 
   useEffect(() => {
@@ -29,27 +29,27 @@ const App = () => {
       //create object with tag IDs as keys and tag objects as values
       const tagsObj = formatObjectByIDKeys(tags)
       console.log("TAGS OBJ", tagsObj)
-      setTags(tagsObj)
+      setTagsObject(tagsObj)
 
       //create object with contact tag IDs as keys and contact tag objects as values
       const contactTagsObj = formatObjectByIDKeys(contactTags)
       console.log("CONTACTS TAG OBJ", contactTagsObj)
-      setContactTags(contactTagsObj)
-
-      //create object with geoIps IDs as keys and geoIps objects as values
-      const geoIpsObj = formatObjectByIDKeys(geoIps)
-      console.log("geoIps OBJ", geoIpsObj)
-      setGeoIps(geoIpsObj)
+      setContactTagsObject(contactTagsObj)
 
       //create object with deal IDs as keys and deal objects as values
       const dealsObj = formatObjectByIDKeys(deals)
       console.log("DEALS obj", dealsObj)
-      setDeals(dealsObj)
+      setDealsObject(dealsObj)
       
-      //create object with geoAddress IDs as keys and geoAddress objects as values
-      const geoAddressesObj = formatObjectByIDKeys(geoAddresses)
-      console.log("GeoAddresses obj", geoAddressesObj)
-      setGeoAddresses(geoAddressesObj)
+       //create object with geoAddress IDs as keys and geoAddress objects as values
+       const geoAddressesObj = formatObjectByIDKeys(geoAddresses)
+       console.log("GeoAddresses obj", geoAddressesObj)
+       setGeoAddressesObject(geoAddressesObj)
+
+      //create object with geoIps IDs as keys and geoIps objects as values
+      const geoIpsObj = formatObjectByIDKeys(geoIps)
+      console.log("geoIps OBJ", geoIpsObj)
+      setGeoIpsObject(geoIpsObj)
     
       setContacts(contacts)
     } 
@@ -60,11 +60,11 @@ const App = () => {
     <div className="App">
       <ContactsList 
         contacts={contacts}
-        dealObjects={deals}
-        tagObjects={tags}
-        contactTagObjects={contactTags}
-        geoIpsObjects={geoIps}
-        geoAddressObjects={geoAddresses}
+        dealsObject={dealsObject}
+        tagsObject={tagsObject}
+        contactTagsObject={contactTagsObject}
+        geoIpsObject={geoIpsObject}
+        geoAddressesObject={geoAddressesObject}
       />
     </div>
   );
