@@ -17,5 +17,5 @@ Each list item displays the contact name, total value of deals in USD, the locat
 ## To run tests
 `npm test`
 
-##CORS issues
+## CORS issues
 If any CORS issues arise, go to https://cors-anywhere.herokuapp.com/ and there will be a button to click that resolves the issue. 
