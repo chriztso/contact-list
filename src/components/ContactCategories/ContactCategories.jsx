@@ -1,6 +1,6 @@
-import './ContactCategories.css'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import './ContactCategories.css'
 
 const ContactCategories = () => {
     return (
