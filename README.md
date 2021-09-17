@@ -7,8 +7,11 @@ Each list item displays the contact name, total value of deals in USD, the locat
 ## Installation
 
 `git clone https://github.com/chriztso/contact-list.git`
+
 `cd contact-list`
+
 `npm install`
+
 `npm start`
 
 ## To run tests
