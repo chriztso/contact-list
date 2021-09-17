@@ -27,10 +27,8 @@ const ContactRows = ( props ) => {
             //push to array
             contactTagsArr.push(tag)
         })
-        console.log('CT ARR', contactTagsArr)
         //create string from contact tags array
         const contactTagsStr = contactTagsArr.join(', ')
-        console.log("CT STR", contactTagsStr)
         return contactTagsStr
     }
 
@@ -51,14 +49,12 @@ const ContactRows = ( props ) => {
               dealsTotalValueUSD += Math.round((Number(value)/100))
             }
         })
-        console.log("TOTAL VAL", dealsTotalValueUSD)
         //format number with commas
         dealsTotalValueUSD = dealsTotalValueUSD.toLocaleString("en-US")
         return dealsTotalValueUSD
     }
 
     const getLocation = (geoIps) => {
-        console.log("GE", geoIps)
         let location = ''
         //go through each geoIps ID 
         geoIps.forEach(geoIpsID => {
@@ -73,7 +69,6 @@ const ContactRows = ( props ) => {
             const city = geoAddressObject["city"]
             const stateAbbreviation = getStateAbbreviation(geoAddressObject["state"])
             location = `${city}, ${stateAbbreviation}, ${country}`
-            console.log("LOCATION", location)
         })
         return location
     }
@@ -82,22 +77,17 @@ const ContactRows = ( props ) => {
         <div className="contact-rows">
             {contacts.map((contact) => {
                 const { firstName, lastName, geoIps, contactTags, deals } = contact
-                console.log('___________________________________')
                 const name = `${firstName} ${lastName}`
                 const initials = `${firstName[0]}${lastName[0]}`
-                console.log('NAME', name)
                 const contactTagsStr = getContactTags(contactTags)
                 const numberOfDeals = deals.length
                 const dealsTotalValue = getDealsTotalValue(deals)
 
                 let geoAddressStr = ""
-                console.log("GEO", geoIps.length)
                 if(geoIps.length === 0){
                     geoAddressStr = 'N/A'
                 } else {
                   geoAddressStr = getLocation(geoIps)
-                  console.log('GA ARR', geoAddressStr)
-                  console.log('___________________________________')
                 }
 
                 return (
