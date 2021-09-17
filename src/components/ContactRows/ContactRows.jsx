@@ -11,7 +11,7 @@ const ContactRows = ( props ) => {
         geoIpsObject,
         geoAddressesObject
     } = props
-    console.log("CONTACTS", contacts)
+
     const getContactTags = (contactTags) => {
         let contactTagsArr = []
         //go through each contactTag ID in contact property array, 
