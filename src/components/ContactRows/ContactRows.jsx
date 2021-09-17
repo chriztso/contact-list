@@ -5,11 +5,11 @@ import convertToUSD from '../../utils/convert'
 const ContactRows = ( props ) => {
     const {
         contacts,
-        dealObjects,
-        tagObjects,
-        contactTagObjects,
-        geoIpsObjects,
-        geoAddressObjects
+        dealsObject,
+        tagsObject,
+        contactTagsObject,
+        geoIpsObject,
+        geoAddressesObject
     } = props
 
     const getContactTags = (contactTags) => {
@@ -17,11 +17,11 @@ const ContactRows = ( props ) => {
         //go through each contactTag ID in contact property array, 
         contactTags.forEach(contactTagID => {
             //access the object in contactTagObjects with contact tag ID
-            const contactTagObject = contactTagObjects[contactTagID]
+            const contactTagObject = contactTagsObject[contactTagID]
             //get tag ID from contactTag object 
             const tagId = contactTagObject["tag"]
             //access the object in tagObjects
-            const tagObject = tagObjects[tagId]
+            const tagObject = tagsObject[tagId]
             //get tag from tag object
             const tag = tagObject["tag"]
             //push to array
@@ -39,7 +39,7 @@ const ContactRows = ( props ) => {
         //go through each deal ID in contact property array
         deals.forEach(dealID => {
             //access the deal object in dealObjects with each deal ID
-            const dealObj = dealObjects[dealID]
+            const dealObj = dealsObject[dealID]
             //get value and currency of deal object and add to dealsTotalValue
             const { value, currency } = dealObj
             //convert to USD if currency is not USD
@@ -58,26 +58,28 @@ const ContactRows = ( props ) => {
     }
 
     const getLocation = (geoIps) => {
+        console.log("GE", geoIps)
+        let location = ''
         //go through each geoIps ID 
         geoIps.forEach(geoIpsID => {
             //access geoIps object in geoIpsObjects with each geoIps ID
-            const geoIpObject = geoIpsObjects[geoIpsID]
+            const geoIpsObj = geoIpsObject[geoIpsID]
             //accesss the geoAddrID property in each object
-            const geoAddrID = geoIpObject["geoaddrid"]
+            const geoAddrID = geoIpsObj["geoaddrid"]
             //access geoAddr object in geoAddressObjects with geoAddr ID
-            const geoAddressObject = geoAddressObjects[geoAddrID]
+            const geoAddressObject = geoAddressesObject[geoAddrID]
             //get city, state, country
             const country = geoAddressObject["country2"]
             const city = geoAddressObject["city"]
             const stateAbbreviation = getStateAbbreviation(geoAddressObject["state"])
-            //concat into string
-            const location = `${city}, ${stateAbbreviation}, ${country}`
-            return location
+            location = `${city}, ${stateAbbreviation}, ${country}`
+            console.log("LOCATION", location)
         })
+        return location
     }
 
     return (
-        <div>
+        <div className="contact-rows">
             {contacts.map((contact) => {
                 const { firstName, lastName, geoIps, contactTags, deals } = contact
                 console.log('___________________________________')
@@ -89,6 +91,7 @@ const ContactRows = ( props ) => {
                 const dealsTotalValue = getDealsTotalValue(deals)
 
                 let geoAddressStr = ""
+                console.log("GEO", geoIps.length)
                 if(geoIps.length === 0){
                     geoAddressStr = 'N/A'
                 } else {
