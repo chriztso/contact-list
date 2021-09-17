@@ -1,9 +1,9 @@
 .App {
-  border: 1px solid white;
   height: 100%; 
   padding: 20px;
   color: black;
-  min-width: 600px;
+  min-width: 1000px;
+  max-width: 1200px; 
 }
 
 .App-logo {
