@@ -4,8 +4,9 @@
     align-items: center;
     color: rgb(54, 58, 73);
     font-weight: 600;
-    height: 28px;
+    height: 26px;
     font-size: 16px;
+    position: relative;
 }
 
 .contact-categories__checkbox{
@@ -14,28 +15,28 @@
 }
 
 .contact-categories__contact-title{
-    /* border: 1px solid white; */
     width: 20%; 
 }
 
 .contact-categories__value-title{
-    /* border: 1px solid white; */
     width: 15%; 
     display: flex;
     align-items: center;
 }
 
 .contact-categories__location-title{
-    /* border: 1px solid white; */
     width: 15%; 
 }
 
 .contact-categories__deals-title{
-    /* border: 1px solid white; */
     width: 10%; 
 }
 
 .contact-categories__tags-title{
-    /* border: 1px solid black; */
-    width: 32%; 
+    width: 34%; 
+}
+
+.contact-categories__three-dots{
+    position: absolute; 
+    right: 12px;
 }
