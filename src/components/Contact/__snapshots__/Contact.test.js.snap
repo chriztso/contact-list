@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact renders Contact 1`] = `
+<div
+  className="contact"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <input
+    className="contact__checkbox"
+    type="checkbox"
+  />
+  <div
+    className="contact__name"
+  >
+    <div
+      className="contact__initials"
+    >
+      JS
+    </div>
+    <div>
+      John Smith
+    </div>
+  </div>
+  <span
+    className="contact__value"
+  >
+    $
+    100
+  </span>
+  <span
+    className="contact__location"
+  >
+    N/A
+  </span>
+  <span
+    className="contact__deals"
+  >
+    2
+  </span>
+  <span
+    className="contact__tags"
+  >
+    test
+  </span>
+</div>
+`;
