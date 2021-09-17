@@ -1,10 +1,11 @@
 .contact-categories{
     border: 1px solid rgb(233, 234, 240);
     display: flex; 
-    padding: 5px 0px;     
     align-items: center;
-    color: rgb(96, 102, 124);
+    color: rgb(54, 58, 73);
     font-weight: 600;
+    height: 28px;
+    font-size: 16px;
 }
 
 .contact-categories__checkbox{
@@ -19,7 +20,7 @@
 
 .contact-categories__value-title{
     /* border: 1px solid white; */
-    width: 12%; 
+    width: 15%; 
     display: flex;
     align-items: center;
 }
@@ -36,5 +37,5 @@
 
 .contact-categories__tags-title{
     /* border: 1px solid black; */
-    width: 35%; 
+    width: 32%; 
 }
