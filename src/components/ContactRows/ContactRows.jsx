@@ -44,11 +44,11 @@ const ContactRows = ( props ) => {
             const { value, currency } = dealObj
             //convert to USD if currency is not USD
             if(currency !== "usd"){
-              const valueInUSD = convertToUSD(currency, Number(value))
+              const valueInUSD = convertToUSD(currency, (Number(value)/100))
               dealsTotalValueUSD += valueInUSD
             } else {
               //add without conversion if in USD
-              dealsTotalValueUSD += Number(value)
+              dealsTotalValueUSD += Math.round((Number(value)/100))
             }
         })
         console.log("TOTAL VAL", dealsTotalValueUSD)
